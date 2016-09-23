@@ -1,0 +1,257 @@
+<?= $this->insert('overall/header')  ?>
+<body class="">
+
+  <div id="wrapper">
+    <?= $this->insert('overall/nav')  ?>
+
+
+    <div id="page-wrapper" class="gray-bg">
+      <?= $this->insert('overall/top-nav')  ?>
+
+      <!-- Inicio del Contenido del pagina -->
+      <div class="row">
+        <div class="col-lg-12">
+
+          <div class="col-lg-12">
+
+
+            <div class="col-lg-3">
+                <div class="widget style1 white ">
+                    <div class="row">
+                        <div class="col-xs-4">
+
+                        </div>
+                        <div class="col-xs-8 text-right">
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+  <a href="producers/producers">
+<div class="col-lg-3 btn btn-ttc">
+    <div class="widget style1 tabla-bg ">
+        <div class="row">
+            <div class="col-xs-4">
+                <i class="fa fa-truck fa-5x"></i>
+            </div>
+            <div class="col-xs-8 text-right">
+          <span>Productores Activos</span>
+                  <h3 class="font-bold">Demo VePrinot</h3>
+            </div>
+
+        </div>
+    </div>
+</div>
+    </a>
+    <a href="producers/registrar">
+  <div class="col-lg-3 btn btn-ttc">
+      <div class="widget style1 registrar-bg ">
+          <div class="row">
+              <div class="col-xs-4">
+                  <i class="fa fa-pencil-square-o fa-5x"></i>
+              </div>
+              <div class="col-xs-8 text-right">
+            <span>Registar Productor</span>
+                  <h3 class="font-bold">Demo VePrinot</h3>
+              </div>
+
+          </div>
+      </div>
+  </div>
+      </a>
+      <a href="home">
+    <div class="col-lg-3 btn btn-ttc">
+        <div class="widget style1 home-bg ">
+            <div class="row">
+                <div class="col-xs-4">
+                    <i class="fa fa-dashboard fa-5x"></i>
+                </div>
+                <div class="col-xs-8 text-right">
+              <span>Principal</span>
+                    <h3 class="font-bold">Demo VePrinot</h3>
+                </div>
+
+            </div>
+        </div>
+    </div>
+        </a><div class="row">
+          <div class="col-lg-12">
+            <div class="panel-body">
+              <div class="ibox">
+                <div class="ibox-title">
+
+                  <div class="ibox-tools">
+                    <a class="collapse-link">
+                      <i class="fa fa-chevron-up"></i>
+                    </a>
+
+
+                    <a class="close-link">
+                      <i class="fa fa-times"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="ibox-content">
+            <form  action="producers/comprar" class="wizard-big" method="POST" id="comprarleche">
+
+
+              <h1>Compra de Leche</h1>
+              <fieldset>
+
+                <div class="row">
+
+
+
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <div class="hr-line-dashed"></div>
+                      <label class="col-sm-5 control-label">Selecciona al Productor</label>
+                      <div class="col-sm-10">
+                      <!--
+                       //
+                      //   $fecha_ultima_visita ="2016-7-29";
+                      //   $fecha_visita = strtotime($fecha_ultima_visita);
+                      //   $fecha_actual = time();
+                      //  $semana = floor(($fecha_actual - $fecha_visita) / ( 7*24 * 60 * 60));
+                      //   if ($semana==2) {
+                      //     echo $semana;
+                      //   }else {
+                      //     echo "no se cumple";
+                      //   }
+
+
+                      //  $semanaSiguiente = time() + (7 * 24 * 60 * 60);
+                        // 7 días; 24 horas; 60 minutos; 60 segundos
+                      //  echo 'Ahora:            '. date('Y-m-d') ."\n";
+                        //echo 'Semana Siguiente: '. date('Y-m-d', $semanaSiguiente) ."\n";
+                        // o usar strtotime():
+                      //  echo '5 Semanas Siguiente: '. date('Y-m-d', strtotime('+5 week')) ."\n";
+
+                        <select id="nombre_leche" class="form-control m-b" name="nombre_leche"  SIZE="1"  oninput="submit()">
+                           //foreach ($p as $m):?>
+                            <option value=" //$m['id_productores']?>">  //$m['nombre_productores']  ?></option>
+                           // endforeach ?>
+                        </select>
+                    -->
+
+
+                    <select id="id_productor" class="form-control m-b" name="id_productor"  SIZE="1" >
+                      <?php foreach ($p as $m):?>
+                        <option value="<?= $m['id_productores']?>"><?=  $m['nombre_productores']  ?></option>
+                      <?php  endforeach ?>
+                    </select>
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <div class="hr-line-dashed"></div>
+                      <label>Litros De Leche</label>
+                      <input id="cantidad_leche" name="cantidad_leche" type="text" class="form-control" required="">
+
+                    </div>
+
+
+
+                  </div>
+                </div>
+              </fieldset>
+
+              <button type="submit"  name="comprar" id="comprar" value="Comprar Leche"  class="btn btn-success btn-sm demo2 full-width m-b">
+                  Comprar
+              </button>
+
+            </form>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+</div>
+  </div>
+  </div>
+  </div>
+  </div>
+  <!-- Fin del Contenido del pagina -->
+
+
+  <?= $this->insert('overall/footer')  ?>
+
+  <script src="views/app/js/productores.js"></script>
+  <script>
+
+      $(document).ready(function () {
+
+          $('.demo1').click(function(){
+              swal({
+                  title: "Welcome in Alerts",
+                  text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+              });
+          });
+
+          $('.demo2').click(function(){
+              swal({
+                  title: "Compra realizada Con Exito!",
+                  text: "Gracias Por Comprar",
+                  type: "success"
+              });
+          });
+
+          $('.demo3').click(function () {
+              swal({
+                  title: "Are you sure?",
+                  text: "You will not be able to recover this imaginary file!",
+                  type: "warning",
+                  showCancelButton: true,
+                  confirmButtonColor: "#DD6B55",
+                  confirmButtonText: "Yes, delete it!",
+                  closeOnConfirm: false
+              }, function () {
+                  swal("Deleted!", "Your imaginary file has been deleted.", "success");
+              });
+          });
+
+          $('.demo4').click(function () {
+              swal({
+                          title: "Are you sure?",
+                          text: "Your will not be able to recover this imaginary file!",
+                          type: "warning",
+                          showCancelButton: true,
+                          confirmButtonColor: "#DD6B55",
+                          confirmButtonText: "Yes, delete it!",
+                          cancelButtonText: "No, cancel plx!",
+                          closeOnConfirm: false,
+                          closeOnCancel: false },
+                      function (isConfirm) {
+                          if (isConfirm) {
+                              swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                          } else {
+                              swal("Cancelled", "Your imaginary file is safe :)", "error");
+                          }
+                      });
+          });
+
+
+      });
+
+
+      $('.demo3').click(function () {
+          swal({
+              title: "Are you sure?",
+              text: "You will not be able to recover this imaginary file!",
+              type: "warning",
+              showCancelButton: true,
+              confirmButtonColor: "#DD6B55",
+              confirmButtonText: "Yes, delete it!",
+              closeOnConfirm: false
+          }, function () {
+              swal("Deleted!", "Your imaginary file has been deleted.", "success");
+          });
+      });
+  </script>

@@ -1,0 +1,51 @@
+<?= $this->insert('overall/header')  ?>
+<body class="">
+
+    <div id="wrapper">
+  <?= $this->insert('overall/nav')  ?>
+  <div class="logo">
+    <h3><?= strtoupper(APP) ?></h3>
+  </div>
+        <div id="page-wrapper" class="gray-bg">
+        <?= $this->insert('overall/top-nav')  ?>
+
+            <!-- Inicio del Contenido del pagina -->
+
+            <body class="gray-bg">
+
+
+                <div class="middle-box text-center animated fadeInDown">
+                    <h1>404</h1>
+                    <h3 class="font-bold">Pagina no Encontrada</h3>
+
+                    <div class="error-desc">
+                        Lo sentimos , pero la página que busca ha sido encontrada.
+                        <div class="form-actions">
+                          <p>Controlador <b><?= str_replace('Controller','',$controller) ?></b> no encontrado.</p>
+
+                          <?= $this->insert('overall/modules') ?>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+                </body>
+              <?= $this->insert('overall/footer') ?>
+
+            </div>
+              <!-- Fin del Contenido del pagina -->
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

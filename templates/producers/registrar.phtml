@@ -1,0 +1,199 @@
+<?= $this->insert('overall/header')  ?>
+<body class="">
+
+  <div id="wrapper">
+    <?= $this->insert('overall/nav')  ?>
+
+    <div id="page-wrapper" class="gray-bg">
+      <?= $this->insert('overall/top-nav')  ?>
+
+      <!-- Inicio del Contenido del pagina -->
+      <div class="col-lg-3">
+          <div class="widget style1 white ">
+              <div class="row">
+                  <div class="col-xs-4">
+
+                  </div>
+                  <div class="col-xs-8 text-right">
+
+
+                  </div>
+
+              </div>
+          </div>
+      </div>
+<a href="producers/producers">
+<div class="col-lg-3 btn btn-ttc">
+<div class="widget style1 tabla-bg ">
+  <div class="row">
+      <div class="col-xs-4">
+          <i class="fa fa-truck fa-5x"></i>
+      </div>
+      <div class="col-xs-8 text-right">
+    <span>Productores Activos</span>
+            <h3 class="font-bold">Demo VePrinot</h3>
+      </div>
+
+  </div>
+</div>
+</div>
+</a>
+<a href="producers/comprar">
+<div class="col-lg-3 btn btn-ttc">
+<div class="widget style1 registrar-bg ">
+    <div class="row">
+        <div class="col-xs-4">
+            <i class="fa fa-pencil-square-o fa-5x"></i>
+        </div>
+        <div class="col-xs-8 text-right">
+      <span>Comprar Leche</span>
+            <h3 class="font-bold">Demo VePrinot</h3>
+        </div>
+
+    </div>
+</div>
+</div>
+</a>
+<a href="home">
+<div class="col-lg-3 btn btn-ttc">
+  <div class="widget style1 home-bg ">
+      <div class="row">
+          <div class="col-xs-4">
+              <i class="fa fa-dashboard fa-5x"></i>
+          </div>
+          <div class="col-xs-8 text-right">
+        <span>Principal</span>
+              <h3 class="font-bold">Demo VePrinot</h3>
+          </div>
+
+      </div>
+  </div>
+</div>
+  </a>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="panel-body">
+            <div class="ibox">
+              <div class="ibox-title">
+                <h5>Modulo de Productores</h5>
+                <div class="ibox-tools">
+                  <a class="collapse-link">
+                    <i class="fa fa-chevron-up"></i>
+                  </a>
+
+
+                  <a class="close-link">
+                    <i class="fa fa-times"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="ibox-content">
+
+
+                <form  action="producers/registrar" class="wizard-big" method="POST">
+
+                  <h1>Registro De Productor</h1>
+                  <fieldset>
+
+                    <div class="row">
+                      <div class="col-lg-6">
+                        <div class="form-group">
+                          <label>Nombres</label>
+                          <input id="nombre_productores" name="nombre_productores" type="text" class="form-control required" required="">
+                        </div>
+                        <div class="form-group">
+                          <label>Cedula</label>
+                          <input id="ced_productores" name="ced_productores" type="text" class="form-control required" required="">
+                        </div>
+
+
+                      </div>
+                      <div class="col-lg-6">
+                        <div class="form-group">
+                          <label>Telefono</label>
+                          <input id="telefono_productores" name="telefono_productores" type="text" class="form-control " required="">
+
+                        </div>
+                        <div class="form-group">
+                          <label>Dirección</label>
+                          <input id="direccion_productores" name="direccion_productores" type="text" class="form-control"required="">
+                        </div>
+
+
+                      </div>
+                    </div>
+                  </fieldset>
+                  <input type="submit" name="registrar" id="registrar" value="Registrar"  class="btn btn-primary block full-width m-b">
+
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fin del Contenido del pagina -->
+
+
+  <?= $this->insert('overall/footer')  ?>
+
+  <script src="views/app/js/productores.js"></script>
+
+  <script>
+  $(document).ready(function(){
+    $('.dataTables-example').DataTable({
+      dom: '<"html5buttons"B>lTfgitp',
+      buttons: [
+        {extend: 'pdf', title: 'Ventas De Leche Semanales'},
+
+        {extend: 'print',
+        customize: function (win){
+          $(win.document.body).addClass('white-bg');
+          $(win.document.body).css('font-size', '12px');
+
+          $(win.document.body).find('table')
+          .addClass('compact')
+          .css('font-size', 'inherit');
+        }
+      }
+    ]
+
+  });
+
+
+
+  /* Init DataTables */
+  var oTable = $('#editable').DataTable();
+
+  /* Apply the jEditable handlers to the table */
+  oTable.$('td').editable( 'views/backend/example_ajax.php', {
+    "callback": function( sValue, y ) {
+      var aPos = oTable.fnGetPosition( this );
+      oTable.fnUpdate( sValue, aPos[0], aPos[1] );
+    },
+    "submitdata": function ( value, settings ) {
+      return {
+        "row_id": this.parentNode.getAttribute('id'),
+        "column": oTable.fnGetPosition( this )[2]
+      };
+    },
+
+    "width": "90%",
+    "height": "100%"
+  } );
+
+
+});
+
+function fnClickAddRow() {
+  $('#editable').dataTable().fnAddData( [
+    "Custom row",
+    "New row",
+    "New row",
+    "New row",
+    "New row" ] );
+
+  }
+  </script>

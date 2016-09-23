@@ -1,0 +1,75 @@
+<?= $this->insert('overall/header')  ?>
+
+
+            <!-- Inicio del Contenido del pagina -->
+            <body class="gray-bg">
+<img class="img-responsive bglogin" src="views/backend/img/hh.jpg" alt="" />
+<img class="img-responsive bg1login" src="views/backend/img/queso.png" alt="bg1_login" />
+<img class="img-responsive nglogin" src="views/backend/img/ng.png" alt="ng_login" />
+<img class="img-responsive  vacalogin" src="views/backend/img/GBVaca.png" alt="ng_login" />
+    <div class="loginColumns animated fadeInDown">
+        <div class="row">
+
+            <div class="col-md-6">
+
+
+
+
+            </div>
+
+            <div class="col-md-6">
+              <div class="alert hide" id="ajax_login"></div>
+                <div class="ibox-content">
+                  <br><br>
+                  <div class="pull-left">
+                       <strong> Ingresa Tus Credenciales</strong>
+                  </div>
+                  <br>
+                    <form class="m-t" role="form" action="home" enctype="application/x-www-form-urlencoded" id="login_form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Nombre de Usuario" required="" name="user">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" placeholder="Contraseña" required="" name="pass">
+                        </div>
+                          <div class="form-group">
+                        <button type="button" id="login" class="btn btn-primary block full-width m-b" data-style="zoom-in">Iniciar Sesión</button>
+
+
+                        </div>
+
+                        <a href="#">
+                            <small></small>
+                        </a>
+
+                        <p class="text-muted text-center">
+                            <small></small>
+                        </p>
+
+                    </form>
+
+
+                    <p class="m-t">
+                        <small>Realizado Con Bootstrap 3 &copy; 2016</small>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <hr/>
+        <div class="row">
+          <div class="pull-right">
+              <strong>Diseñado por Prinot S.A. &copy; 2016-2018</strong>
+          </div>
+          <div>
+            <strong class="pull-left"> NATILLAS GUÁRICO </strong> &copy; 2016.
+
+          </div>
+        </div>
+    </div>
+
+</body>
+              <!-- Fin del Contenido del pagina -->
+
+
+<?= $this->insert('overall/footer')  ?>
+<script src="views/app/js/login.js"> </script>
